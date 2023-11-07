@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi0wex5fecyea"]
+
+[ext_resource type="Texture2D" uid="uid://rf7ku8mw7jwm" path="res://assets/sprites/characters/babka/animations/walk/babka.png" id="1_cu6k1"]
+[ext_resource type="Script" path="res://scenes/characters/babka/Babka.gd" id="1_iv8yq"]
+[ext_resource type="Script" path="res://scenes/states/StateMachine.gd" id="2_e56lo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlqtc"]
+size = Vector2(32, 32)
+
+[node name="Babka" type="CharacterBody2D"]
+script = ExtResource("1_iv8yq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_cu6k1")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tlqtc")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_e56lo")
